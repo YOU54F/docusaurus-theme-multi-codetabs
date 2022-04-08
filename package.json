@@ -1,0 +1,12 @@
+{
+  "name": "docusaurus-tab-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:docs": "cd website && npm i && npm build",
+    "start:docs": "cd website && npm start"
+  },
+  "author": "Yousaf Nabi",
+  "license": "MIT"
+}
