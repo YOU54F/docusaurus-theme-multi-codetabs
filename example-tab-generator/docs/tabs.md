@@ -3,10 +3,7 @@ sidebar_position: 1
 title: Tabs
 ---
 
-import {
-  generateGettingStartedTab,
-  generateCodeTabs,
-} from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
 import { meta } from "../src/components/docTabGenerator/meta";
 
 
@@ -23,10 +20,7 @@ They will be grouped by the `groupId` so all tabs, with the same name will chang
 Import it in your readme file
 
 ```typescript
-import {
-  generateGettingStartedTab,
-  generateCodeTabs,
-} from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
 ```
 
 Add it into your markdown or mdx file.
@@ -239,29 +233,7 @@ ___
 
 ## Tabs (Filtered List)
 
-#####  code
-
-```jsx
-<div>
-  {generateGettingStartedTab({
-    data: meta.languages,
-    withLabel: true,
-    withLink: true,
-  })}
-</div>
-```
-
-#####  demo
-
-<div>
-  {generateGettingStartedTab({
-    data: meta.languages,
-    withLabel: true,
-    withLink: true,
-  })}
-</div>
-
-___ 
+To do. Filter the default list, by user providing certain keys
 
 
 

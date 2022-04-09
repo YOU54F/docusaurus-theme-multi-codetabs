@@ -42,12 +42,6 @@ export default function Home(): JSX.Element {
             group: "languages",
           })}
         </div>
-
-        <div>
-  {generateCodeTabs({
-    group: "testing"
-  })}
-</div>
       </main>
     </Layout>
   );

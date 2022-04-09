@@ -34,6 +34,10 @@ function generateTabItem({
     ? data[key]
     : { ...data[key], iconLink: undefined };
 
+  // generate an icon, with out without a label
+  // the user may have set the data or it exists
+  // in the default dataset, so explictly set to
+  // undefined
   const iconGenerator = withLabel
     ? generateTabIcon({
         ...retrievedData,
@@ -45,14 +49,15 @@ function generateTabItem({
         ...retrievedData,
         iconTitle: undefined,
       });
-  const [newContent, setNewContent] = useState(null);
+
+  // If there is a contentUrl set, lets go and fetch it
+  const [fetchedCodeContent, setFetchedCodeContent] = useState(null);
 
   useEffect(() => {
     if (data[key].contentUrl) {
-      setNewContent(
+      setFetchedCodeContent(
         <ReferenceCode
-          reference="foo"
-          language={Object.keys(data)[0]}
+          language={data[key].language ? data[key].language :Object.keys(data)[0]}
           title={data[key].contentTitle}
           url={data[key].contentUrl}
         >
@@ -62,67 +67,14 @@ function generateTabItem({
     }
   }, []);
 
+  // fallback to user generated content if 
   const generatedTabItem = (
-    <TabItem value={key} label={iconGenerator} key={key}>
-      {newContent ? newContent : 
+    <TabItem value={key} label={iconGenerator as unknown as string} key={key}>
+      {fetchedCodeContent ? fetchedCodeContent : 
       content}
     </TabItem>
   );
   return generatedTabItem;
-}
-
-function generateGettingStartedTab({
-  data,
-  withLabel,
-  withLink,
-}: TabGeneratorOptions) {
-  const generatedTab = (
-    <Tabs groupId="languages">
-      {generateTabItem({
-        data,
-        key: "js",
-        content: `### js`,
-        withLabel,
-        withLink,
-      })}
-      {generateTabItem({
-        data,
-        key: "java",
-        content: `### js`,
-        withLabel,
-        withLink,
-      })}
-      {generateTabItem({
-        data,
-        key: "golang",
-        content: `### golang`,
-        withLabel,
-        withLink,
-      })}
-      {generateTabItem({
-        data,
-        key: "ruby",
-        content: `### ruby`,
-        withLabel,
-        withLink,
-      })}
-      {generateTabItem({
-        data,
-        key: "cplusplus",
-        content: `### C++`,
-        withLabel,
-        withLink,
-      })}
-      {generateTabItem({
-        data,
-        key: "docker",
-        content: `### Docker`,
-        withLabel,
-        withLink,
-      })}
-    </Tabs>
-  );
-  return generatedTab;
 }
 
 function generateCodeTabs({
@@ -176,4 +128,4 @@ function generateCodeTabs({
   return generatedTab;
 }
 
-export { generateTabItem, generateGettingStartedTab, generateCodeTabs };
+export { generateTabItem, generateCodeTabs };

@@ -10,7 +10,6 @@ export interface GitHubReference {
 }
 
 export interface ReferenceCodeBlockProps extends CodeBlockProps {
-  reference: string;
   url: string;
 }
 export interface TabGeneratorProps extends TabProps {
@@ -37,6 +36,7 @@ export interface TabDataItem {
   contentUrl?: string;
   content?: string;
   contentTitle?: string;
+  language?: string
 }
 
 export type IconGeneratorOpts = Pick<
