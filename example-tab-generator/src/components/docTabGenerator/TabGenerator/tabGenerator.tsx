@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import { TabData, TabDataItem } from "../types";
 import { generateTabIcon } from "../IconGenerator/iconGenerator";
-import ReferenceCode from "@you54f/theme-github-codeblock/build/theme/ReferenceCodeBlock";
+import ReferenceCode from "../ReferenceCodeBlock";
+import { meta } from "../meta";
+export interface TabItemGeneratorOptions {
+  data: TabData;
+  key: string;
+  content?: string | JSX.Element;
+  withLabel?: boolean;
+  withLink?: boolean;
+}
+
+export interface TabGeneratorOptions {
+  data?: TabData;
+  withLabel: boolean;
+  withLink: boolean;
+  groupId?: string;
+  group?: "languages" | "testing";
+  autoGenContent?: boolean;
+}
 
 function generateTabItem({
   data,
@@ -11,13 +28,7 @@ function generateTabItem({
   content,
   withLabel = false,
   withLink = false,
-}: {
-  data: TabData;
-  key: string;
-  content?: string | JSX.Element;
-  withLabel?: boolean;
-  withLink?: boolean;
-}) {
+}: TabItemGeneratorOptions) {
   const retrievedData: TabDataItem = withLink
     ? data[key]
     : { ...data[key], iconLink: undefined };
@@ -28,45 +39,35 @@ function generateTabItem({
         ...retrievedData,
         iconTitle: undefined,
       });
+  const [newContent, setNewContent] = useState(null);
 
-  if (data[key].contentUrl) {
-    const markdown = `
-      \`\`\`js 
-    ${data[key].contentUrl}
-      \`\`\`
-      `;
-    content = <ReferenceCode language="js" metastring={data[key].contentTitle ? `title="${data[key].contentTitle}"` :" "}>{markdown}</ReferenceCode>;
-  }
+  useEffect(() => {
+    if (data[key].contentUrl) {
+      const markdown = `
+            \`\`\`
+          ${data[key].contentUrl}
+            \`\`\`
+            `;
+      setNewContent(
+        <ReferenceCode
+          reference="foo"
+          language="js"
+          metastring={
+            data[key].contentTitle ? `title="${data[key].contentTitle}"` : " "
+          }
+        >
+          {markdown}
+        </ReferenceCode>
+      );
+    }
+  }, []);
 
-  const markdown2 = `
-  if (contentUrl) {
-    content = (
-      <>
-        {" "}
-      </>
-    );
-  }
-  `;
-
-  const generatedTab = (
+  const generatedTabItem = (
     <TabItem value={key} label={iconGenerator} key={key}>
-      {content}
-
-      {/* <ReferenceCode language="js">{markdown}</ReferenceCode>
-
-
-      <CodeBlock language="js">{markdown2}</CodeBlock> */}
+      {newContent ? newContent : content}
     </TabItem>
   );
-  return generatedTab;
-}
-
-export interface TabGeneratorOptions {
-  data: TabData;
-  withLabel: boolean;
-  withLink: boolean;
-  groupId?: string;
-  autoGenContent?: boolean;
+  return generatedTabItem;
 }
 
 function generateGettingStartedTab({
@@ -128,22 +129,42 @@ function generateCodeTabs({
   data,
   withLabel,
   withLink,
-  autoGenContent,
+  autoGenContent = false,
+  group,
 }: TabGeneratorOptions) {
+  if (!data) {
+    data = meta.languages;
+  }
+
+  if (group) {
+    switch (group) {
+      case "testing":
+        data = meta.testing_tools;
+        groupId = "testing";
+        break;
+      case "languages":
+        data = meta.languages;
+        groupId = "languages";
+        break;
+      default:
+        console.log("selected group not found, defaulting to languages");
+        data = meta.languages;
+        groupId = "languages";
+        break;
+    }
+  }
+
   const generatedTab = (
     <Tabs groupId={groupId ? groupId : "code-tab"}>
       {Object.keys(data).map((key) => {
+        const defaultTabContent = (
+          <a href={data[key].iconLink}>{data[key].iconTitle} Documentation</a>
+        );
+
         return generateTabItem({
           data,
           key,
-          content: autoGenContent ? (
-            <a href={data[key].iconLink}>
-              {data[key].iconTitle} Implemenation Guide
-            </a>
-          ) : (
-            data[key].content
-          ),
-          contentUrl: data[key].contentUrl,
+          content: autoGenContent ? defaultTabContent : data[key].content,
           withLabel,
           withLink,
         });

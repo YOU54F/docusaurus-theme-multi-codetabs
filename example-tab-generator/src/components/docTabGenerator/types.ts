@@ -1,6 +1,6 @@
-import type { Props } from '@theme-init/CodeBlock'
-// import type {Props as TabProp} from '@theme/Tabs';
-// import type {Props as TabItemProps} from '@theme/TabItem';
+import type { Props as CodeBlockProps } from '@theme/CodeBlock'
+import type {Props as TabProps} from '@theme/Tabs';
+import type {Props as TabItemProps} from '@theme/TabItem';
 
 export interface GitHubReference {
     url: string
@@ -9,7 +9,13 @@ export interface GitHubReference {
     title: string
 }
 
-export interface ReferenceCodeBlockProps extends Props {
+export interface ReferenceCodeBlockProps extends CodeBlockProps {
+    reference: string
+}
+export interface TabGeneratorProps extends TabProps {
+    reference: string
+}
+export interface TabItemGeneratorProps extends TabItemProps {
     reference: string
 }
 
@@ -24,12 +30,13 @@ export interface DispatchMessage {
 export interface TabData {
     [key: string]: TabDataItem;
   }
-  export interface TabDataItem {
+  export interface TabDataItem  {
     iconTitle: string| undefined;
     iconLocation: string;
     iconLink?: string | undefined;
     contentUrl?: string;
     content?: string;
+    contentTitle?: string
   }
   
   export type TabDataItemLabel = Pick<
