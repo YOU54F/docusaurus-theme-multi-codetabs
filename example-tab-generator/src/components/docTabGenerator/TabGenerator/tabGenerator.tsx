@@ -49,20 +49,14 @@ function generateTabItem({
 
   useEffect(() => {
     if (data[key].contentUrl) {
-      const markdown = `
-            \`\`\`
-          ${data[key].contentUrl}
-            \`\`\`
-            `;
       setNewContent(
         <ReferenceCode
           reference="foo"
           language={Object.keys(data)[0]}
-          metastring={
-            data[key].contentTitle ? `title="${data[key].contentTitle}"` : " "
-          }
+          title={data[key].contentTitle}
+          url={data[key].contentUrl}
         >
-          {markdown}
+          {content}
         </ReferenceCode>
       );
     }
@@ -70,7 +64,8 @@ function generateTabItem({
 
   const generatedTabItem = (
     <TabItem value={key} label={iconGenerator} key={key}>
-      {newContent ? newContent : content}
+      {newContent ? newContent : 
+      content}
     </TabItem>
   );
   return generatedTabItem;

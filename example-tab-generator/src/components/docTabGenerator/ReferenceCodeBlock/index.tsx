@@ -16,9 +16,10 @@ const noteStyle: React.CSSProperties = {
  * @param {string} ref url to github file
  */
 export function parseReference(ref: string): GitHubReference {
-  
-  const fullUrl = ref.slice(ref.indexOf("https"), -1).trim().split('\n')[0]
-  const [url, loc] = fullUrl.split("#");
+  // only required if we get markdown
+  // const fullUrl = ref.slice(ref.indexOf("https"), -1).trim().split('\n')[0]
+
+  const [url, loc] = ref.split("#");
   const [org, repo, blob, branch, ...pathSeg] = new global.URL(url).pathname
     .split("/")
     .slice(1);
@@ -39,17 +40,23 @@ export function parseReference(ref: string): GitHubReference {
 function ReferenceCode(props: ReferenceCodeBlockProps) {
   const [data, setData] = useState<string>("...loading");
 
-  const codeSnippetDetails = parseReference(props.children);
+  const codeSnippetDetails = parseReference(props.url);
 
   useEffect(() => {
     const { url, fromLine, toLine } = codeSnippetDetails;
 
     try {
       fetch(url)
-        .then((response) => response.text())
-        .then((responseText) => {
-         return responseText.split("\n").slice(fromLine, (toLine || fromLine) + 1);
+        .then((response) => {
+          if (!response.ok) {
+            setData("failed");
+            throw new Error("failed");
+          }
+          return response.text();
         })
+        .then((responseText) =>
+          responseText.split("\n").slice(fromLine, (toLine || fromLine) + 1)
+        )
         .then((body) =>
           body
             .map((line) =>
@@ -72,25 +79,26 @@ function ReferenceCode(props: ReferenceCodeBlockProps) {
         )
         .then((data) => setData(data));
     } catch (error) {
-      setData(error);
+      console.log(error);
     }
   }, []);
 
-  const titleMatch = props.metastring?.match(/title="(?<title>.*)"/);
-
   const customProps = {
     ...props,
-    metastring: titleMatch?.groups?.title
-      ? ` title="${titleMatch?.groups?.title}"`
-      : ` title="${codeSnippetDetails.title}"`,
-    children: data,
+    title: props.title ? props.title : codeSnippetDetails.title,
+    children:
+      data && data !== "failed"
+        ? data
+        : props.children
+        ? props.children
+        : "Failed to fetch content, and no fallback content found",
   };
 
   return (
     <div>
-      <CodeBlock {...customProps}>{data}</CodeBlock>
+      <CodeBlock {...customProps}>{customProps.children}</CodeBlock>
       <div style={noteStyle}>
-        <a href={props.children} target="_blank">
+        <a href={props.url} target="_blank">
           See full example on GitHub
         </a>
       </div>
