@@ -6,7 +6,7 @@ title: Icons
 import {
   languageIconsWithLabels,
   languageIcons,
-} from "../src/components/docTabGenerator/IconGenerator/icons";
+} from "../src/components/docTabGenerator/theme/IconGenerator/icons";
 
 ## Overview
 
@@ -34,7 +34,7 @@ Import them in your readme file
 import {
   languageIconsWithLabels,
   languageIcons,
-} from "../src/components/docTabGenerator/IconGenerator/icons";
+} from "../src/components/docTabGenerator/theme/IconGenerator/icons";
 ```
 
 They accept optional overrides

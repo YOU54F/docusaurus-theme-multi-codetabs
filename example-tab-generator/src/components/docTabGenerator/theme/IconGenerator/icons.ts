@@ -1,5 +1,5 @@
 import { meta } from "../meta";
-import { IconGeneratorOpts } from "../types";
+import { IconGeneratorOpts } from "../../types/types";
 import { generateTabIcon } from "./iconGenerator";
 
 const label_with_link_postman = (overides: IconGeneratorOpts) =>
@@ -495,7 +495,7 @@ export const languageIcons = {
   icon_with_link_cplusplus,
 };
 
-const testingToolIconsWithLabels = {
+export const testingToolIconsWithLabels = {
   label_with_link_postman,
   label_with_link_restassured,
   label_with_link_dredd,
@@ -517,7 +517,7 @@ const testingToolIconsWithLabels = {
   label_pact,
   label_msw,
 };
-const testingToolIcons = {
+export const testingToolIcons = {
   icon_with_link_postman,
   icon_with_link_restassured,
   icon_with_link_dredd,

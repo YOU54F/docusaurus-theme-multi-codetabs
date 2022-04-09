@@ -1,5 +1,5 @@
 import React from "react";
-import { IconGeneratorOpts } from "../types";
+import { IconGeneratorOpts } from "../../types/types";
 
 export function generateTabIcon({
   iconLocation,

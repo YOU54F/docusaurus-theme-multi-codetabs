@@ -1,6 +1,9 @@
+// import CodeBlock from "@theme-init/CodeBlock";
+/// <reference types="@docusaurus/module-type-aliases" />
 import React, { useEffect, useState } from "react";
+// import CodeBlock from "@docusaurus/theme-classic/src/theme/CodeBlock";
 import CodeBlock from "@theme/CodeBlock";
-import type { ReferenceCodeBlockProps, GitHubReference } from "../types";
+import type { ReferenceCodeBlockProps, GitHubReference } from "../../types/types";
 
 const noteStyle: React.CSSProperties = {
   fontSize: ".9em",
@@ -20,7 +23,7 @@ export function parseReference(ref: string): GitHubReference {
   // const fullUrl = ref.slice(ref.indexOf("https"), -1).trim().split('\n')[0]
 
   const [url, loc] = ref.split("#");
-  const [org, repo, blob, branch, ...pathSeg] = new global.URL(url).pathname
+  const [org, repo,_blob, branch, ...pathSeg] = new global.URL(url).pathname
     .split("/")
     .slice(1);
 
@@ -89,9 +92,7 @@ function ReferenceCode(props: ReferenceCodeBlockProps) {
     children:
       data && data !== "failed"
         ? data
-        : props.children
-        ? props.children
-        : "Failed to fetch content, and no fallback content found",
+        : props.children ?? "Failed to fetch content, and no fallback content found",
   };
 
   return (

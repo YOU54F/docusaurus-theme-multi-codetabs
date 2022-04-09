@@ -11,6 +11,8 @@ export interface GitHubReference {
 
 export interface ReferenceCodeBlockProps extends CodeBlockProps {
   url: string;
+  language: string | undefined
+  title: string | undefined
 }
 export interface TabGeneratorProps extends TabProps {
   reference: string;

@@ -1,4 +1,4 @@
-import { TabData } from "./types";
+import { TabData } from "../types/types";
 
 const languages: TabData = {
   js: {

@@ -5,7 +5,7 @@ title: Quick start
 
 import {
   generateCodeTabs,
-} from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+} from "../src/components/docTabGenerator/theme/TabGenerator/tabGenerator";
 
 
 ## Let there be docs
@@ -13,7 +13,7 @@ import {
 ### Add this in your markdown
 
 ```jsx
-import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+import { generateCodeTabs } from "../src/components/docTabGenerator/theme/TabGenerator/tabGenerator";
 
 <div>
   {generateCodeTabs({

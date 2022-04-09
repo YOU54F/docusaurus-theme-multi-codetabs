@@ -3,8 +3,8 @@ sidebar_position: 1
 title: Tables
 ---
 
-import { DataTable } from "../src/components/docTabGenerator/TableGenerator/index";
-import { columns, tableData } from "../src/data/examples.table";
+import { DataTable } from "../src/components/docTabGenerator/theme/TableGenerator/index";
+import { columns, tableData } from "../src/components/docTabGenerator/data/examples.table";
 
 
 ## Examples

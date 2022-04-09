@@ -3,8 +3,8 @@ sidebar_position: 1
 title: Tabs
 ---
 
-import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
-import { meta } from "../src/components/docTabGenerator/meta";
+import { generateCodeTabs } from "../src/components/docTabGenerator/theme/TabGenerator/tabGenerator";
+import { meta } from "../src/components/docTabGenerator/theme/meta";
 
 
 ## Overview
@@ -20,7 +20,7 @@ They will be grouped by the `groupId` so all tabs, with the same name will chang
 Import it in your readme file
 
 ```typescript
-import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+import { generateCodeTabs } from "../src/components/docTabGenerator/theme/TabGenerator/tabGenerator";
 ```
 
 Add it into your markdown or mdx file.

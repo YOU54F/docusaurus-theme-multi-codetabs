@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import { TabData, TabDataItem } from "../types";
+import { TabData, TabDataItem } from "../../types/types";
 import { generateTabIcon } from "../IconGenerator/iconGenerator";
 import ReferenceCode from "../ReferenceCodeBlock";
 import merge from "deepmerge";
@@ -51,7 +51,7 @@ function generateTabItem({
       });
 
   // If there is a contentUrl set, lets go and fetch it
-  const [fetchedCodeContent, setFetchedCodeContent] = useState(null);
+  const [fetchedCodeContent, setFetchedCodeContent] = useState(<>123</>);
 
   useEffect(() => {
     if (data[key].contentUrl) {
@@ -59,9 +59,9 @@ function generateTabItem({
         <ReferenceCode
           language={data[key].language ? data[key].language :Object.keys(data)[0]}
           title={data[key].contentTitle}
-          url={data[key].contentUrl}
+          url={data[key].contentUrl || 'no url'}
         >
-          {content}
+       {content?content as unknown as string:<></> as unknown as string}
         </ReferenceCode>
       );
     }
@@ -70,7 +70,7 @@ function generateTabItem({
   // fallback to user generated content if 
   const generatedTabItem = (
     <TabItem value={key} label={iconGenerator as unknown as string} key={key}>
-      {fetchedCodeContent ? fetchedCodeContent : 
+      {fetchedCodeContent && fetchedCodeContent !== <></> ? fetchedCodeContent : 
       content}
     </TabItem>
   );
@@ -111,17 +111,21 @@ function generateCodeTabs({
   const generatedTab = (
     <Tabs groupId={groupId ? groupId : "code-tab"}>
       {Object.keys(data).map((key) => {
-        const defaultTabContent = (
-          <a href={data[key].iconLink}>{data[key].iconTitle} Documentation</a>
-        );
+        if (data){
+          const defaultTabContent = (
+            <a href={data[key].iconLink}>{data[key].iconTitle} Documentation</a>
+          );
+  
+          return generateTabItem({
+            data,
+            key,
+            content: autoGenContent ? defaultTabContent : data[key].content,
+            withLabel,
+            withLink,
+          });
+        } 
+        return<></>
 
-        return generateTabItem({
-          data,
-          key,
-          content: autoGenContent ? defaultTabContent : data[key].content,
-          withLabel,
-          withLink,
-        });
       })}
     </Tabs>
   );
