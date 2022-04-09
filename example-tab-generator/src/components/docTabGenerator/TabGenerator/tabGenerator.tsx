@@ -4,6 +4,7 @@ import TabItem from "@theme/TabItem";
 import { TabData, TabDataItem } from "../types";
 import { generateTabIcon } from "../IconGenerator/iconGenerator";
 import ReferenceCode from "../ReferenceCodeBlock";
+import merge from "deepmerge";
 import { meta } from "../meta";
 export interface TabItemGeneratorOptions {
   data: TabData;
@@ -15,8 +16,8 @@ export interface TabItemGeneratorOptions {
 
 export interface TabGeneratorOptions {
   data?: TabData;
-  withLabel: boolean;
-  withLink: boolean;
+  withLabel?: boolean;
+  withLink?: boolean;
   groupId?: string;
   group?: "languages" | "testing";
   autoGenContent?: boolean;
@@ -34,8 +35,12 @@ function generateTabItem({
     : { ...data[key], iconLink: undefined };
 
   const iconGenerator = withLabel
-    ? generateTabIcon({...retrievedData,
-      iconTitle: data[key].iconTitle?data[key].iconTitle : data[key].iconTitle =  Object.keys(data)[0]})
+    ? generateTabIcon({
+        ...retrievedData,
+        iconTitle: data[key].iconTitle
+          ? data[key].iconTitle
+          : (data[key].iconTitle = Object.keys(data)[0]),
+      })
     : generateTabIcon({
         ...retrievedData,
         iconTitle: undefined,
@@ -128,29 +133,32 @@ function generateGettingStartedTab({
 function generateCodeTabs({
   groupId,
   data,
-  withLabel,
-  withLink,
+  withLabel = false,
+  withLink = false,
   autoGenContent = false,
   group,
 }: TabGeneratorOptions) {
-  if (!data) data = meta.languages;
-
   if (group) {
     switch (group) {
       case "testing":
-        data = { ...meta.testing_tools, ...data };
+        data = data ? merge(meta.testing_tools, data) : meta.testing_tools;
         groupId = groupId ? groupId : "testing";
         break;
       case "languages":
-        data = { ...meta.languages, ...data };
+        data = data ? merge(meta.languages, data) : meta.languages;
         groupId = groupId ? groupId : "languages";
         break;
       default:
         console.log("selected group not found, defaulting to languages");
-        data = { ...meta.languages, ...data };
-        groupId = groupId ? groupId :  "languages";
+        data = data ? merge(meta.languages, data) : meta.languages;
+        groupId = groupId ? groupId : "languages";
         break;
     }
+  }
+
+  if (!data) {
+    console.log("no data provided and group not provided, defaulting to languages collection");
+    data = meta.languages;
   }
 
   const generatedTab = (

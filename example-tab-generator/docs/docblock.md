@@ -45,7 +45,6 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 
 ##### code
 
-
 ```jsx
 <div>
   {generateCodeTabs({
@@ -62,8 +61,6 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
   })}
 </div>
 
-
-
 #### Code tabs from URL with user provided data
 
 ##### code
@@ -72,18 +69,19 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 <div>
   {generateCodeTabs({
     data: {
-    ruby: {
-      iconTitle: "Ruby",
-      iconLocation:
-        "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
-      iconLink: "https://www.ruby-lang.org/en/documentation/",
-      contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
-      content: "",
-    },
+      ruby: {
+        iconTitle: "Ruby",
+        iconLocation:
+          "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
+        iconLink: "https://www.ruby-lang.org/en/documentation/",
+        contentUrl:
+          "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
+        content: "",
+      },
     },
     withLabel: true,
     withLink: false,
-})}
+  })}
 </div>
 ```
 
@@ -114,18 +112,19 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 <div>
   {generateCodeTabs({
     data: {
-    ruby: {
-      iconTitle: "Ruby",
-      iconLocation:
-        "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
-      iconLink: "https://www.ruby-lang.org/en/documentation/",
-      contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
-      contentTitle: "My own title",
-    },
+      ruby: {
+        iconTitle: "Ruby",
+        iconLocation:
+          "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
+        iconLink: "https://www.ruby-lang.org/en/documentation/",
+        contentUrl:
+          "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
+        contentTitle: "My own title",
+      },
     },
     withLabel: true,
     withLink: false,
-})}
+  })}
 </div>
 ```
 

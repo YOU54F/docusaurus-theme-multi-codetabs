@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'docusaurus-tab-generator',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Accesible configurable multi-language code blocks',
   url: 'https://docusaurus-tab-generator.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',

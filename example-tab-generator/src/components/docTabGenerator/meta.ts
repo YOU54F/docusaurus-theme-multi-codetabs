@@ -1,25 +1,5 @@
 import { TabData } from "./types";
 
-
-const yourTabData: TabData = {
-  js: {
-    iconTitle: "JavaScript",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/javascript-original.svg",
-    iconLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1",
-    content: "",
-  },
-  java: {
-    iconTitle: "Java",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/java-original.svg",
-    iconLink: "https://docs.oracle.com/en/java/",
-    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/Java.java#L1-L5",
-    content: "",
-  },
-}
-
 const languages: TabData = {
   js: {
     iconTitle: "JavaScript",
@@ -42,7 +22,7 @@ const languages: TabData = {
     iconLocation:
       "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/go-original.svg",
     iconLink: "https://go.dev/",
-    contentUrl: "",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/g/Go.go#L1-L7",
     content: "",
   },
   ruby: {

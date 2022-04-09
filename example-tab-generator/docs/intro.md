@@ -1,32 +1,31 @@
 ---
 sidebar_position: 1
-title: Tables
+title: Quick start
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 import {
-  languageIconsWithLabels,
-  languageIcons,
-} from "../src/components/docTabGenerator/IconGenerator/icons";
-import {
-  generateGettingStartedTab,
   generateCodeTabs,
 } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
-import { meta } from "../src/data/meta";
-
-import { DataTable } from "../src/components/docTabGenerator/TableGenerator/index";
-import { columns, tableData } from "../src/data/examples.table";
 
 
-## Examples
+## Let there be docs
 
-### code
+### Add this in your markdown
 
 ```jsx
-<DataTable columns={columns} data={tableData} />
+import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+
+<div>
+  {generateCodeTabs({
+    group: "languages"
+  })}
+</div>
 ```
 
-### demo
+### Click on a tab
 
-<DataTable columns={columns} data={tableData} />
+<div>
+  {generateCodeTabs({
+    group: "languages"
+  })}
+</div>
