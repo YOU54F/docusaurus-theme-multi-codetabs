@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CodeBlock from "@theme-init/CodeBlock";
+import CodeBlock from "@theme/CodeBlock";
 import type { ReferenceCodeBlockProps, GitHubReference } from "../types";
 
 const noteStyle: React.CSSProperties = {
