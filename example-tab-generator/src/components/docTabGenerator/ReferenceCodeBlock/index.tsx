@@ -85,7 +85,7 @@ function ReferenceCode(props: ReferenceCodeBlockProps) {
 
   const customProps = {
     ...props,
-    title: props.title ? props.title : codeSnippetDetails.title,
+    title: props.title ? props.title : decodeURIComponent(codeSnippetDetails.title),
     children:
       data && data !== "failed"
         ? data

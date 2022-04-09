@@ -61,8 +61,8 @@ const languages: TabData = {
     iconLocation:
       "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/scala-original.svg",
     iconLink: "https://docs.scala-lang.org/",
-    contentUrl: "",
-    content: "https://github.com/leachim6/hello-world/blob/main/s/Scala.scala",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/s/Scala.scala",
+    content: "",
   },
   clojure: {
     iconTitle: "Clojure",
