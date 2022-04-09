@@ -8,21 +8,18 @@ generateCodeTabs,
 } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
 import { meta } from "../src/data/meta";
 
-
 ## Overview
 
 Generate tabs rendering code retrieved from a public GitHub URL.
-
 
 :::info
 They will be grouped by the `groupId` so all tabs, with the same name will change.
 :::
 
-
 Import it in your readme file
 
 ```typescript
-import { generateCodeTabs} from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+import { generateCodeTabs } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
 ```
 
 Add it into your markdown or mdx file.
@@ -48,10 +45,11 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 
 ##### code
 
+
 ```jsx
 <div>
   {generateCodeTabs({
-    group: "languages"
+    group: "languages",
   })}
 </div>
 ```
@@ -64,11 +62,6 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
   })}
 </div>
 
-<div>
-  {generateCodeTabs({
-    group: "languages"
-  })}
-</div>
 
 
 #### Code tabs from URL with user provided data
@@ -155,7 +148,6 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 })}
 </div>
 
-
 #### Multiple Code Tab Blocks with different code
 
 ##### code
@@ -163,7 +155,27 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 ```jsx
 <div>
   {generateCodeTabs({
-    group: "languages"
+    groupId: "change_me_only",
+    withLabel: true,
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JSX%28Facebook%29.js",
+      contentTitle: "This isn't ruby",
+      iconTitle: 'ruby'
+    },
+    }
+  })}
+</div>
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only",
+    withLabel: true,
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1-L2",
+      contentTitle: "Neither is this",
+    }
+    }
   })}
 </div>
 ```
@@ -172,30 +184,111 @@ export type GitHubCodeGeneratorBlockOpts = Pick<
 
 Select the ruby tab
 
-// TODO not merging user provided data
-
 <div>
   {generateCodeTabs({
     groupId: "change_me_only",
-    group:"languages",
+    withLabel: true,
     data:{
     ruby: {
       contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JSX%28Facebook%29.js",
       contentTitle: "This isn't ruby",
+      iconTitle: 'ruby'
     },
     }
   })}
 </div>
 
+If you dont provide an `iconTitle` in your `data` object but you set `withLabel: true` , the `key` will be used as the tab name.
+
+See it is set to ruby here
+
 <div>
   {generateCodeTabs({
-    groupId: "change_me_only2",
-    group:"languages",
+    groupId: "change_me_only",
+    withLabel: true,
     data:{
     ruby: {
       contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1-L2",
       contentTitle: "Neither is this",
+    }
+    }
+  })}
+</div>
+
+#### Using the default data-set but providing optional overrides
+
+Set the `group` to `"languages"` or `"testing"` to get the default dataset, when overriding `data`
+
+If you set `group`, the `groupId` will be set to `"languages"` or `"testing"` unless otherwise set.
+
+If you set `group`, to a value that is not present, it will fall back to `"languages"`
+
+##### code
+
+```jsx
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only",
+    withLabel: true,
+    group: "languages",
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JSX%28Facebook%29.js",
+      contentTitle: "This isn't ruby",
+      iconTitle: 'ruby'
     },
+    }
+  })}
+</div>
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only",
+    withLabel: true,
+    group: "languages",
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1-L2",
+      contentTitle: "Neither is this",
+    }
+    }
+  })}
+</div>
+
+```
+
+##### demo
+
+Select the ruby tab
+
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only",
+    withLabel: true,
+    group: "languages",
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JSX%28Facebook%29.js",
+      contentTitle: "This isn't ruby",
+      iconTitle: 'ruby'
+    },
+    }
+  })}
+</div>
+
+If you dont provide an `iconTitle` in your `data` object but you set `withLabel: true` , the `key` will be used as the tab name.
+
+See it is set to ruby here
+
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only",
+    withLabel: true,
+    group: "languages",
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1-L2",
+      contentTitle: "Neither is this",
+    }
     }
   })}
 </div>

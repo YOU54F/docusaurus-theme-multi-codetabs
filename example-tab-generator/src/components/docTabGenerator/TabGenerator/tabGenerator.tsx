@@ -34,7 +34,8 @@ function generateTabItem({
     : { ...data[key], iconLink: undefined };
 
   const iconGenerator = withLabel
-    ? generateTabIcon(retrievedData)
+    ? generateTabIcon({...retrievedData,
+      iconTitle: data[key].iconTitle?data[key].iconTitle : data[key].iconTitle =  Object.keys(data)[0]})
     : generateTabIcon({
         ...retrievedData,
         iconTitle: undefined,
@@ -132,24 +133,22 @@ function generateCodeTabs({
   autoGenContent = false,
   group,
 }: TabGeneratorOptions) {
-  if (!data) {
-    data = meta.languages;
-  }
+  if (!data) data = meta.languages;
 
   if (group) {
     switch (group) {
       case "testing":
-        data = {...meta.testing_tools,data};
-        groupId = "testing";
+        data = { ...meta.testing_tools, ...data };
+        groupId = groupId ? groupId : "testing";
         break;
       case "languages":
-        data = {...meta.languages,data};
-        groupId = "languages";
+        data = { ...meta.languages, ...data };
+        groupId = groupId ? groupId : "languages";
         break;
       default:
         console.log("selected group not found, defaulting to languages");
-        data = {...meta.languages,data};
-        groupId = "languages";
+        data = { ...meta.languages, ...data };
+        groupId = groupId ? groupId :  "languages";
         break;
     }
   }
