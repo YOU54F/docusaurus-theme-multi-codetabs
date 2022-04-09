@@ -22,6 +22,8 @@ export function parseReference(ref: string): GitHubReference {
   const [org, repo, blob, branch, ...pathSeg] = new global.URL(url).pathname
     .split("/")
     .slice(1);
+    console.log('saf')
+    console.log(loc)
   const [fromLine, toLine] = loc
     ? loc.split("-").map((lineNr) => parseInt(lineNr.slice(1), 10) - 1)
     : [0, Infinity];

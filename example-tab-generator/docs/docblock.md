@@ -6,7 +6,6 @@ title: Dynamic Code Blocks
 import {
 generateCodeTabs,
 } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
-import { meta } from "../src/data/meta";
 
 ## Overview
 

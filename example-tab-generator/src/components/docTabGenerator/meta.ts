@@ -9,101 +9,101 @@ const languages: TabData = {
     contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1",
     content: "",
   },
-  java: {
-    iconTitle: "Java",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/java-original.svg",
-    iconLink: "https://docs.oracle.com/en/java/",
-    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/Java.java#L1-L5",
-    content: "",
-  },
-  golang: {
-    iconTitle: "Golang",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/go-original.svg",
-    iconLink: "https://go.dev/",
-    contentUrl: "https://github.com/leachim6/hello-world/blob/main/g/Go.go#L1-L7",
-    content: "",
-  },
-  ruby: {
-    iconTitle: "Ruby",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
-    iconLink: "https://www.ruby-lang.org/en/documentation/",
-    contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
-    content: "",
-  },
-  dotnet: {
-    iconTitle: ".NET",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/csharp-original.svg",
-    iconLink: "https://docs.microsoft.com/en-us/dotnet/",
-    contentUrl: "",
-    content: "",
-  },
-  docker: {
-    iconTitle: "Docker",
-    iconLocation: "https://www.svgrepo.com/show/331370/docker.svg",
-    iconLink: "https://docs.docker.com/",
-    contentUrl: "",
-    content: "",
-  },
-  kotlin: {
-    iconTitle: "Kotlin",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/kotlin-original.svg",
-    iconLink: "https://kotlinlang.org/docs",
-    contentUrl: "",
-    content: "",
-  },
-  scala: {
-    iconTitle: "Scala",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/scala-original.svg",
-    iconLink: "https://docs.scala-lang.org/",
-    contentUrl: "",
-    content: "",
-  },
-  clojure: {
-    iconTitle: "Clojure",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/clojure-original.svg",
-    iconLink: "https://clojure.org/api/api",
-    contentUrl: "",
-    content: "",
-  },
-  python: {
-    iconTitle: "Python",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/python-original.svg",
-    iconLink: "https://docs.python.org/",
-    contentUrl: "",
-    content: "",
-  },
-  swift: {
-    iconTitle: "Swift and Objective-C",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/swift-original.svg",
-    iconLink: "https://developer.apple.com/documentation/swift",
-    contentUrl: "",
-    content: "",
-  },
-  php: {
-    iconTitle: "PHP",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/php-original.svg",
-    iconLink: "https://www.php.net/docs.php",
-    contentUrl: "",
-    content: "",
-  },
-  cplusplus: {
-    iconTitle: "C++",
-    iconLocation:
-      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/csharp-original.svg",
-    iconLink: "https://docs.microsoft.com/en-us/cpp/",
-    contentUrl: "",
-    content: "",
-  },
+  // java: {
+  //   iconTitle: "Java",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/java-original.svg",
+  //   iconLink: "https://docs.oracle.com/en/java/",
+  //   contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/Java.java#L1-L5",
+  //   content: "",
+  // },
+  // golang: {
+  //   iconTitle: "Golang",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/go-original.svg",
+  //   iconLink: "https://go.dev/",
+  //   contentUrl: "https://github.com/leachim6/hello-world/blob/main/g/Go.go#L1-L7",
+  //   content: "",
+  // },
+  // ruby: {
+  //   iconTitle: "Ruby",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
+  //   iconLink: "https://www.ruby-lang.org/en/documentation/",
+  //   contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
+  //   content: "",
+  // },
+  // dotnet: {
+  //   iconTitle: ".NET",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/csharp-original.svg",
+  //   iconLink: "https://docs.microsoft.com/en-us/dotnet/",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // docker: {
+  //   iconTitle: "Docker",
+  //   iconLocation: "https://www.svgrepo.com/show/331370/docker.svg",
+  //   iconLink: "https://docs.docker.com/",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // kotlin: {
+  //   iconTitle: "Kotlin",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/kotlin-original.svg",
+  //   iconLink: "https://kotlinlang.org/docs",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // scala: {
+  //   iconTitle: "Scala",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/scala-original.svg",
+  //   iconLink: "https://docs.scala-lang.org/",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // clojure: {
+  //   iconTitle: "Clojure",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/clojure-original.svg",
+  //   iconLink: "https://clojure.org/api/api",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // python: {
+  //   iconTitle: "Python",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/python-original.svg",
+  //   iconLink: "https://docs.python.org/",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // swift: {
+  //   iconTitle: "Swift and Objective-C",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/swift-original.svg",
+  //   iconLink: "https://developer.apple.com/documentation/swift",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // php: {
+  //   iconTitle: "PHP",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/php-original.svg",
+  //   iconLink: "https://www.php.net/docs.php",
+  //   contentUrl: "",
+  //   content: "",
+  // },
+  // cplusplus: {
+  //   iconTitle: "C++",
+  //   iconLocation:
+  //     "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/csharp-original.svg",
+  //   iconLink: "https://docs.microsoft.com/en-us/cpp/",
+  //   contentUrl: "",
+  //   content: "",
+  // },
 };
 
 const testing_tools: TabData = {

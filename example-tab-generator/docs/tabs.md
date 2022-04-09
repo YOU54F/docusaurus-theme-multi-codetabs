@@ -7,10 +7,8 @@ import {
   generateGettingStartedTab,
   generateCodeTabs,
 } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
-import { meta } from "../src/data/meta";
+import { meta } from "../src/components/docTabGenerator/meta";
 
-import { DataTable } from "../src/components/docTabGenerator/TableGenerator/index";
-import { columns, tableData } from "../src/data/examples.table";
 
 ## Overview
 
