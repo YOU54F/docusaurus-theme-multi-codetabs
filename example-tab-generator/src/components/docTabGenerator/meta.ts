@@ -6,7 +6,7 @@ const languages: TabData = {
     iconLocation:
       "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/javascript-original.svg",
     iconLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/Java.java",
     content: "",
   },
   // java: {
