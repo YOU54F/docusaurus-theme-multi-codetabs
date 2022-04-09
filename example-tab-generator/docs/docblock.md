@@ -1,52 +1,201 @@
 ---
 sidebar_position: 1
-title: Examples
+title: Dynamic Code Blocks
 ---
 
 import {
-  generateCodeTabs,
+generateCodeTabs,
 } from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
 import { meta } from "../src/data/meta";
 
-## Code tabs from URL
 
-### code
+## Overview
+
+Generate tabs rendering code retrieved from a public GitHub URL.
+
+
+:::info
+They will be grouped by the `groupId` so all tabs, with the same name will change.
+:::
+
+
+Import it in your readme file
+
+```typescript
+import { generateCodeTabs} from "../src/components/docTabGenerator/TabGenerator/tabGenerator";
+```
+
+Add it into your markdown or mdx file.
+
+The options are the same as the [tabs](/docs/tabs)
+
+However two are important.
+
+```typescript
+export type GitHubCodeGeneratorBlockOpts = Pick<
+  TabDataItem,
+  "contentUrl" | "contentTitle"
+>;
+```
+
+- `contentUrl` (required)
+  - Either a full GitHub URL `https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb`
+  - Or with line markers `#L1-L2` at the end of the url - `https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2`
+- `contentTitle` (optional)
+  - A title for your displayed code, defaults to file name otherwise
+
+#### Code tabs from URL
+
+##### code
+
+```jsx
+<div>
+  {generateCodeTabs({
+    group: "languages"
+  })}
+</div>
+```
+
+##### demo
+
+<div>
+  {generateCodeTabs({
+    group: "languages"
+  })}
+</div>
+
+<div>
+  {generateCodeTabs({
+    group: "languages"
+  })}
+</div>
+
+
+#### Code tabs from URL with user provided data
+
+##### code
 
 ```jsx
 <div>
   {generateCodeTabs({
     data: {
-      ruby: {
+    ruby: {
       iconTitle: "Ruby",
       iconLocation:
         "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
       iconLink: "https://www.ruby-lang.org/en/documentation/",
-      contentUrl: "",
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
       content: "",
-    },
-    },
-    withLabel: true,
-    withLink: true,
-})}
-</div>
-```
-
-### demo
-
-<div>
-  {generateCodeTabs({
-    data: {
-      ruby: {
-      iconTitle: "Ruby",
-      iconLocation:
-        "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
-      iconLink: "https://www.ruby-lang.org/en/documentation/",
-        contentUrl:
-          "https://github.com/pactflow/example-bi-directional-provider-dredd/blob/master/src/product/product.js#L6-L7",
-        contentTitle: "Just lines 6-7",
     },
     },
     withLabel: true,
     withLink: false,
 })}
+</div>
+```
+
+##### demo
+
+<div>
+  {generateCodeTabs({
+    data: {
+    ruby: {
+      iconTitle: "Ruby",
+      iconLocation:
+        "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
+      iconLink: "https://www.ruby-lang.org/en/documentation/",
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
+      content: "",
+    },
+    },
+    withLabel: true,
+    withLink: false,
+})}
+</div>
+
+#### Code tabs from URL with user provided data and custom title
+
+##### code
+
+```jsx
+<div>
+  {generateCodeTabs({
+    data: {
+    ruby: {
+      iconTitle: "Ruby",
+      iconLocation:
+        "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
+      iconLink: "https://www.ruby-lang.org/en/documentation/",
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
+      contentTitle: "My own title",
+    },
+    },
+    withLabel: true,
+    withLink: false,
+})}
+</div>
+```
+
+##### demo
+
+<div>
+  {generateCodeTabs({
+    data: {
+    ruby: {
+      iconTitle: "Ruby",
+      iconLocation:
+        "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
+      iconLink: "https://www.ruby-lang.org/en/documentation/",
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
+      contentTitle: "My own title",
+    },
+    },
+    withLabel: true,
+    withLink: false,
+})}
+</div>
+
+
+#### Multiple Code Tab Blocks with different code
+
+##### code
+
+```jsx
+<div>
+  {generateCodeTabs({
+    group: "languages"
+  })}
+</div>
+```
+
+##### demo
+
+Select the ruby tab
+
+// TODO not merging user provided data
+
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only",
+    group:"languages",
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JSX%28Facebook%29.js",
+      contentTitle: "This isn't ruby",
+    },
+    }
+  })}
+</div>
+
+<div>
+  {generateCodeTabs({
+    groupId: "change_me_only2",
+    group:"languages",
+    data:{
+    ruby: {
+      contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1-L2",
+      contentTitle: "Neither is this",
+    },
+    }
+  })}
 </div>

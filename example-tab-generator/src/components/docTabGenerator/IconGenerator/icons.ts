@@ -1,313 +1,441 @@
 import { meta } from "../meta";
+import { IconGeneratorOpts } from "../types";
 import { generateTabIcon } from "./iconGenerator";
 
-const label_with_link_postman = generateTabIcon(
-  meta.testing_tools["postman"]
-);
-const label_with_link_restassured = generateTabIcon(
-  meta.testing_tools["restassured"]
-);
-const label_with_link_dredd = generateTabIcon(
-  meta.testing_tools["dredd"]
-);
-const label_with_link_schemathesis = generateTabIcon(
-  meta.testing_tools["schemathesis"]
-);
-const label_with_link_cypress = generateTabIcon(
-  meta.testing_tools["cypress"]
-);
-const label_with_link_wiremock = generateTabIcon(
-  meta.testing_tools["wiremock"]
-);
-const label_with_link_nock = generateTabIcon(meta.testing_tools["nock"]);
-const label_with_link_mountebank = generateTabIcon(
-  meta.testing_tools["mountebank"]
-);
-const label_with_link_pact = generateTabIcon(meta.testing_tools["pact"]);
-const label_with_link_msw = generateTabIcon(meta.testing_tools["msw"]);
-const label_postman = generateTabIcon({
-  ...meta.testing_tools["postman"],
-  iconLink: undefined,
-});
-const label_restassured = generateTabIcon({
-  ...meta.testing_tools["restassured"],
-  iconLink: undefined,
-});
-const label_dredd = generateTabIcon({
-  ...meta.testing_tools["dredd"],
-  iconLink: undefined,
-});
-const label_schemathesis = generateTabIcon({
-  ...meta.testing_tools["schemathesis"],
-  iconLink: undefined,
-});
-const label_cypress = generateTabIcon({
-  ...meta.testing_tools["cypress"],
-  iconLink: undefined,
-});
-const label_wiremock = generateTabIcon({
-  ...meta.testing_tools["wiremock"],
-  iconLink: undefined,
-});
-const label_nock = generateTabIcon({
-  ...meta.testing_tools["nock"],
-  iconLink: undefined,
-});
-const label_mountebank = generateTabIcon({
-  ...meta.testing_tools["mountebank"],
-  iconLink: undefined,
-});
-const label_pact = generateTabIcon({
-  ...meta.testing_tools["pact"],
-  iconLink: undefined,
-});
-const label_msw = generateTabIcon({
-  ...meta.testing_tools["msw"],
-  iconLink: undefined,
-});
-const icon_with_link_postman = generateTabIcon(meta.testing_tools["postman"]);
-const icon_with_link_restassured = generateTabIcon(
-  meta.testing_tools["restassured"]
-);
-const icon_with_link_dredd = generateTabIcon(meta.testing_tools["dredd"]);
-const icon_with_link_schemathesis = generateTabIcon(
-  meta.testing_tools["schemathesis"]
-);
-const icon_with_link_cypress = generateTabIcon(meta.testing_tools["cypress"]);
-const icon_with_link_wiremock = generateTabIcon(meta.testing_tools["wiremock"]);
-const icon_with_link_nock = generateTabIcon(meta.testing_tools["nock"]);
-const icon_with_link_mountebank = generateTabIcon(
-  meta.testing_tools["mountebank"]
-);
-const icon_with_link_pact = generateTabIcon(meta.testing_tools["pact"]);
-const icon_with_link_msw = generateTabIcon(meta.testing_tools["msw"]);
-const icon_postman = generateTabIcon({
-  ...meta.testing_tools["postman"],
-  iconLink: undefined,
-});
-const icon_restassured = generateTabIcon({
-  ...meta.testing_tools["restassured"],
-  iconLink: undefined,
-});
-const icon_dredd = generateTabIcon({
-  ...meta.testing_tools["dredd"],
-  iconLink: undefined,
-});
-const icon_schemathesis = generateTabIcon({
-  ...meta.testing_tools["schemathesis"],
-  iconLink: undefined,
-});
-const icon_cypress = generateTabIcon({
-  ...meta.testing_tools["cypress"],
-  iconLink: undefined,
-});
-const icon_wiremock = generateTabIcon({
-  ...meta.testing_tools["wiremock"],
-  iconLink: undefined,
-});
-const icon_nock = generateTabIcon({
-  ...meta.testing_tools["nock"],
-  iconLink: undefined,
-});
-const icon_mountebank = generateTabIcon({
-  ...meta.testing_tools["mountebank"],
-  iconLink: undefined,
-});
-const icon_pact = generateTabIcon({
-  ...meta.testing_tools["pact"],
-  iconLink: undefined,
-});
-const icon_msw = generateTabIcon({
-  ...meta.testing_tools["msw"],
-  iconLink: undefined,
-});
+const label_with_link_postman = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["postman"], ...overides });
+const label_with_link_restassured = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["restassured"], ...overides });
+const label_with_link_dredd = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["dredd"], ...overides });
+const label_with_link_schemathesis = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["schemathesis"], ...overides });
+const label_with_link_cypress = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["cypress"], ...overides });
+const label_with_link_wiremock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["wiremock"], ...overides });
+const label_with_link_nock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["nock"], ...overides });
+const label_with_link_mountebank = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["mountebank"], ...overides });
+const label_with_link_pact = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["pact"], ...overides });
+const label_with_link_msw = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["msw"], ...overides });
+const label_postman = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["postman"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_restassured = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["restassured"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_dredd = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["dredd"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_schemathesis = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["schemathesis"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_cypress = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["cypress"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_wiremock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["wiremock"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_nock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["nock"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_mountebank = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["mountebank"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_pact = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["pact"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_msw = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["msw"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_with_link_postman = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["postman"], ...overides });
+const icon_with_link_restassured = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["restassured"], ...overides });
+const icon_with_link_dredd = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["dredd"], ...overides });
+const icon_with_link_schemathesis = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["schemathesis"], ...overides });
+const icon_with_link_cypress = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["cypress"], ...overides });
+const icon_with_link_wiremock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["wiremock"], ...overides });
+const icon_with_link_nock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["nock"], ...overides });
+const icon_with_link_mountebank = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["mountebank"], ...overides });
+const icon_with_link_pact = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["pact"], ...overides });
+const icon_with_link_msw = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.testing_tools["msw"], ...overides });
+const icon_postman = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["postman"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_restassured = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["restassured"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_dredd = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["dredd"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_schemathesis = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["schemathesis"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_cypress = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["cypress"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_wiremock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["wiremock"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_nock = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["nock"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_mountebank = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["mountebank"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_pact = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["pact"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_msw = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.testing_tools["msw"],
+    iconLink: undefined,
+    ...overides,
+  });
 
-const label_with_link_javascript = generateTabIcon(meta.languages["js"]);
-const label_with_link_java = generateTabIcon(meta.languages["java"]);
-const label_with_link_golang = generateTabIcon(meta.languages["golang"]);
-const label_with_link_ruby = generateTabIcon(meta.languages["ruby"]);
-const label_with_link_dotnet = generateTabIcon(meta.languages["dotnet"]);
-const label_with_link_docker = generateTabIcon(meta.languages["docker"]);
-const label_with_link_kotlin = generateTabIcon(meta.languages["kotlin"]);
-const label_with_link_scala = generateTabIcon(meta.languages["scala"]);
-const label_with_link_clojure = generateTabIcon(
-  meta.languages["clojure"]
-);
-const label_with_link_python = generateTabIcon(meta.languages["python"]);
-const label_with_link_swift = generateTabIcon(meta.languages["swift"]);
-const label_with_link_php = generateTabIcon(meta.languages["php"]);
-const label_with_link_cplusplus = generateTabIcon(
-  meta.languages["cplusplus"]
-);
-const label_javascript = generateTabIcon({
-  ...meta.languages["js"],
-  iconLink: undefined,
-});
-const label_java = generateTabIcon({
-  ...meta.languages["java"],
-  iconLink: undefined,
-});
-const label_golang = generateTabIcon({
-  ...meta.languages["golang"],
-  iconLink: undefined,
-});
-const label_ruby = generateTabIcon({
-  ...meta.languages["ruby"],
-  iconLink: undefined,
-});
-const label_dotnet = generateTabIcon({
-  ...meta.languages["dotnet"],
-  iconLink: undefined,
-});
-const label_docker = generateTabIcon({
-  ...meta.languages["docker"],
-  iconLink: undefined,
-});
-const label_kotlin = generateTabIcon({
-  ...meta.languages["kotlin"],
-  iconLink: undefined,
-});
-const label_scala = generateTabIcon({
-  ...meta.languages["scala"],
-  iconLink: undefined,
-});
-const label_clojure = generateTabIcon({
-  ...meta.languages["clojure"],
-  iconLink: undefined,
-});
-const label_python = generateTabIcon({
-  ...meta.languages["python"],
-  iconLink: undefined,
-});
-const label_swift = generateTabIcon({
-  ...meta.languages["swift"],
-  iconLink: undefined,
-});
-const label_php = generateTabIcon({
-  ...meta.languages["php"],
-  iconLink: undefined,
-});
-const label_cplusplus = generateTabIcon({
-  ...meta.languages["cplusplus"],
-  iconLink: undefined,
-});
-const icon_javascript = generateTabIcon({
-  ...meta.languages["js"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_java = generateTabIcon({
-  ...meta.languages["java"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_golang = generateTabIcon({
-  ...meta.languages["golang"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_ruby = generateTabIcon({
-  ...meta.languages["ruby"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_dotnet = generateTabIcon({
-  ...meta.languages["dotnet"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_docker = generateTabIcon({
-  ...meta.languages["docker"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_kotlin = generateTabIcon({
-  ...meta.languages["kotlin"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_scala = generateTabIcon({
-  ...meta.languages["scala"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_clojure = generateTabIcon({
-  ...meta.languages["clojure"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_python = generateTabIcon({
-  ...meta.languages["python"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_swift = generateTabIcon({
-  ...meta.languages["swift"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_php = generateTabIcon({
-  ...meta.languages["php"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_cplusplus = generateTabIcon({
-  ...meta.languages["cplusplus"],
-  iconLink: undefined,
-  iconTitle: undefined,
-});
-const icon_with_link_javascript = generateTabIcon({...meta.languages["js"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_java = generateTabIcon({...meta.languages["java"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_golang = generateTabIcon({...meta.languages["golang"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_ruby = generateTabIcon({...meta.languages["ruby"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_dotnet = generateTabIcon({...meta.languages["dotnet"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_docker = generateTabIcon({...meta.languages["docker"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_kotlin = generateTabIcon({...meta.languages["kotlin"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_scala = generateTabIcon({...meta.languages["scala"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_clojure = generateTabIcon({...meta.languages["clojure"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_python = generateTabIcon({...meta.languages["python"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_swift = generateTabIcon({...meta.languages["swift"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_php = generateTabIcon({...meta.languages["php"],
-iconLink: undefined,
-iconTitle: undefined,
-});
-const icon_with_link_cplusplus = generateTabIcon({...meta.languages["cplusplus"],
-iconLink: undefined,
-iconTitle: undefined,
-});
+const label_with_link_javascript = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["js"], ...overides });
+const label_with_link_java = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["java"], ...overides });
+const label_with_link_golang = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["golang"], ...overides });
+const label_with_link_ruby = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["ruby"], ...overides });
+const label_with_link_dotnet = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["dotnet"], ...overides });
+const label_with_link_docker = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["docker"], ...overides });
+const label_with_link_kotlin = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["kotlin"], ...overides });
+const label_with_link_scala = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["scala"], ...overides });
+const label_with_link_clojure = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["clojure"], ...overides });
+const label_with_link_python = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["python"], ...overides });
+const label_with_link_swift = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["swift"], ...overides });
+const label_with_link_php = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["php"], ...overides });
+const label_with_link_cplusplus = (overides: IconGeneratorOpts) =>
+  generateTabIcon({ ...meta.languages["cplusplus"], ...overides });
+const label_javascript = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["js"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_java = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["java"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_golang = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["golang"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_ruby = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["ruby"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_dotnet = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["dotnet"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_docker = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["docker"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_kotlin = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["kotlin"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_scala = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["scala"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_clojure = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["clojure"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_python = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["python"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_swift = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["swift"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_php = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["php"],
+    iconLink: undefined,
+    ...overides,
+  });
+const label_cplusplus = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["cplusplus"],
+    iconLink: undefined,
+    ...overides,
+  });
+const icon_javascript = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["js"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_java = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["java"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_golang = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["golang"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_ruby = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["ruby"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_dotnet = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["dotnet"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_docker = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["docker"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_kotlin = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["kotlin"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_scala = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["scala"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_clojure = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["clojure"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_python = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["python"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_swift = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["swift"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_php = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["php"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_cplusplus = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["cplusplus"],
+    iconLink: undefined,
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_javascript = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["js"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_java = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["java"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_golang = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["golang"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_ruby = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["ruby"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_dotnet = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["dotnet"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_docker = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["docker"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_kotlin = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["kotlin"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_scala = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["scala"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_clojure = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["clojure"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_python = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["python"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_swift = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["swift"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_php = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["php"],
+    iconTitle: undefined,
+    ...overides,
+  });
+const icon_with_link_cplusplus = (overides: IconGeneratorOpts) =>
+  generateTabIcon({
+    ...meta.languages["cplusplus"],
+    iconTitle: undefined,
+    ...overides,
+  });
 
 export const languageIconsWithLabels = {
   label_javascript,

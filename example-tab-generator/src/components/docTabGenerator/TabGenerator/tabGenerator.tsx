@@ -51,7 +51,7 @@ function generateTabItem({
       setNewContent(
         <ReferenceCode
           reference="foo"
-          language="js"
+          language={Object.keys(data)[0]}
           metastring={
             data[key].contentTitle ? `title="${data[key].contentTitle}"` : " "
           }
@@ -139,16 +139,16 @@ function generateCodeTabs({
   if (group) {
     switch (group) {
       case "testing":
-        data = meta.testing_tools;
+        data = {...meta.testing_tools,data};
         groupId = "testing";
         break;
       case "languages":
-        data = meta.languages;
+        data = {...meta.languages,data};
         groupId = "languages";
         break;
       default:
         console.log("selected group not found, defaulting to languages");
-        data = meta.languages;
+        data = {...meta.languages,data};
         groupId = "languages";
         break;
     }

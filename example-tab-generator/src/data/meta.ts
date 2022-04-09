@@ -9,7 +9,7 @@ export interface TabDataItem {
   content?: string;
 }
 
-export type TabDataItemLabel = Pick<
+export type IconGeneratorOpts = Pick<
   TabDataItem,
   "iconLocation" | "iconLink" | "iconTitle"
 >;

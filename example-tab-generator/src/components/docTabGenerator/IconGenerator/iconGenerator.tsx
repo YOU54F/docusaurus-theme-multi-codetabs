@@ -1,11 +1,11 @@
 import React from "react";
-import { TabDataItemLabel } from "../types";
+import { IconGeneratorOpts } from "../types";
 
 export function generateTabIcon({
   iconLocation,
   iconLink,
   iconTitle,
-}: TabDataItemLabel) {
+}: IconGeneratorOpts) {
   return (
     <div style={{ textAlign: "center" }}>
       <a href={iconLink ? iconLink : undefined}>

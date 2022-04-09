@@ -1,13 +1,13 @@
 import { TabData } from "./types";
 
 
-const languages: TabData = {
+const yourTabData: TabData = {
   js: {
     iconTitle: "JavaScript",
     iconLocation:
       "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/javascript-original.svg",
     iconLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    contentUrl: "",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1",
     content: "",
   },
   java: {
@@ -15,7 +15,26 @@ const languages: TabData = {
     iconLocation:
       "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/java-original.svg",
     iconLink: "https://docs.oracle.com/en/java/",
-    contentUrl: "",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/Java.java#L1-L5",
+    content: "",
+  },
+}
+
+const languages: TabData = {
+  js: {
+    iconTitle: "JavaScript",
+    iconLocation:
+      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/javascript-original.svg",
+    iconLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/JavaScript.js#L1",
+    content: "",
+  },
+  java: {
+    iconTitle: "Java",
+    iconLocation:
+      "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/java-original.svg",
+    iconLink: "https://docs.oracle.com/en/java/",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/j/Java.java#L1-L5",
     content: "",
   },
   golang: {
@@ -31,7 +50,7 @@ const languages: TabData = {
     iconLocation:
       "https://raw.githubusercontent.com/pact-foundation/pact.io/master/pages/assets/img/languages/ruby-original.svg",
     iconLink: "https://www.ruby-lang.org/en/documentation/",
-    contentUrl: "",
+    contentUrl: "https://github.com/leachim6/hello-world/blob/main/r/Ruby.rb#L1-L2",
     content: "",
   },
   dotnet: {
