@@ -17,7 +17,7 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themes: [
-    path.resolve(__dirname, '..', 'build')
+    '@you54f/theme-github-codeblock'
   ],
   presets: [
     [

@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import TabsGenerator from "@you54f/theme-github-codeblock/build/theme/TabsGenerator"
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -35,6 +35,7 @@ export default function Home(): JSX.Element {
       <main>
         <HomepageFeatures />
       </main>
+      <TabsGenerator autoGenContent={true} group='languages'>{}</TabsGenerator>
     </Layout>
   );
 }
