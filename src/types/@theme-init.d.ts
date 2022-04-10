@@ -8,3 +8,4 @@ declare module '@theme-init/CodeBlock' {
     const CodeBlock: (props: Props) => JSX.Element;
     export default CodeBlock;
   }
+

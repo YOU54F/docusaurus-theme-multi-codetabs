@@ -66,7 +66,15 @@ async function fetchCode(
     try {
         res = await fetch(url);
     } catch (err) {
-        return fetchResultStateDispatcher({ type: "error", value: err as any });
+        try {
+            // fallback to user provided code snippet if available
+            return fetchResultStateDispatcher({
+                type: "loaded",
+                value: children.substring(children.indexOf("\n") + 1),
+            });
+        } catch (error) {
+            return fetchResultStateDispatcher({ type: "error", value: error as Error });
+        }
     }
 
     if (res.status !== 200) {
@@ -78,7 +86,7 @@ async function fetchCode(
                 value: children.substring(children.indexOf("\n") + 1),
             });
         } catch (error) {
-            return fetchResultStateDispatcher({ type: "error", value: error });
+            return fetchResultStateDispatcher({ type: "error", value: error as Error });
         }
     }
 
