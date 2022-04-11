@@ -69,8 +69,9 @@ export interface TabGeneratorOptions {
     language?: string
   }
   
-  export type IconGeneratorOpts = Pick<
-    TabDataItem,
-    "iconLocation" | "iconLink" | "iconTitle"
-  >;
-  
+  export interface IconGeneratorOpts {
+    iconTitle?: string | undefined;
+    iconLocation?: string;
+    iconLink?: string | undefined;
+    key?: string | undefined;
+  }

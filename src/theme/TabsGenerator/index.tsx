@@ -32,11 +32,13 @@ function generateTabItem({
               ...retrievedData,
               iconTitle: data[key].iconTitle
                   ? data[key].iconTitle
-                  : (data[key].iconTitle = Object.keys(data)[0]),
+                  : (data[key].iconTitle = Object.keys(data[key])[0]),
+                key
           })
         : generateTabIcon({
               ...retrievedData,
               iconTitle: undefined,
+              key
           });
 
     // If there is a contentUrl set, lets go and fetch it
