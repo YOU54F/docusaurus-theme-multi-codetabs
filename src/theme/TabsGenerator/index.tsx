@@ -40,7 +40,7 @@ function generateTabItem({
           });
 
     // If there is a contentUrl set, lets go and fetch it
-    const [fetchedCodeContent, setFetchedCodeContent] = useState(<>123</>);
+    const [fetchedCodeContent, setFetchedCodeContent] = useState(<></>);
     // fallback to user generated content if
     const generatedTabItem = (
         <TabItem
@@ -82,8 +82,8 @@ function generateTabItem({
 
 function TabsGenerator(props: TabGeneratorProps) {
     const { group, autoGenContent, withLabel, withLink } = props;
-    console.log(autoGenContent)
     let { data, groupId } = props;
+
     if (group) {
         switch (group) {
             case "testing":
@@ -98,7 +98,7 @@ function TabsGenerator(props: TabGeneratorProps) {
                 break;
             default:
                 console.log(
-                    "selected group not found, defaulting to languages"
+                    "selected group not found, defaulting to languages, this might be why you are seeing more tabs than expected!"
                 );
                 data = data ? merge(meta.languages, data) : meta.languages;
                 groupId = groupId ? groupId : "languages";

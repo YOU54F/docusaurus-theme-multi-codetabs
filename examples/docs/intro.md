@@ -139,4 +139,11 @@ import TabsGenerator from "@you54f/theme-github-codeblock/build/theme/TabsGenera
 
 ___
 
-<TabsGenerator autoGenContent={true} group='languages'>{}</TabsGenerator>
+  ```jsx
+  import TabsGenerator from "@you54f/theme-github-codeblock/build/theme/TabsGenerator"
+
+  <TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>
+  ```   
+
+
+<TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>

@@ -3,22 +3,19 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'docusaurus-tab-generator',
+  tagline: 'Accesible configurable multi-language code blocks',
+  url: 'https://docusaurus-tab-generator.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-  themes: [
-    '@you54f/theme-github-codeblock'
-  ],
+  organizationName: 'you54f', // Usually your GitHub org/user name.
+  projectName: 'docusaurus-tab-generator', // Usually your repo name.
+
   presets: [
     [
       'classic',
@@ -26,12 +23,12 @@ const config = {
       ({
         docs: {
           remarkPlugins: [
-                      [require('docusaurus-remark-plugin-codetabs'), {
-                         // options             
-                      }]],
-          sidebarPath: require.resolve('./sidebars.js'),
+            [require('docusaurus-remark-plugin-codetabs'), {
+               // options             
+            }]],          
+            sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/you54f/docusaurus-tab-generator',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -39,12 +36,13 @@ const config = {
       }),
     ],
   ],
+  themes: ["@you54f/theme-github-codeblock"], // switch to @saucelabs/theme-github-codeblock when merged https://github.com/saucelabs/docusaurus-theme-github-codeblock/pull/19
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'you54f/docusaurus-tab-generator',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -54,11 +52,10 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Examples',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/you54f/docusaurus-tab-generator',
             label: 'GitHub',
             position: 'right',
           },
@@ -71,38 +68,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Examples',
                 to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },
@@ -112,6 +79,17 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        // default list https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+      // additional supported langs https://prismjs.com/#supported-languages
+      additionalLanguages: [
+        "powershell",
+        "ruby",
+        "csharp",
+        "java",
+        "docker",
+        "groovy",
+        "scala"
+      ],
       },
     }),
 };

@@ -16,11 +16,6 @@ const noteStyle: React.CSSProperties = {
  * @param {string} ref url to github file
  */
 export function parseReference(ref: string): GitHubReference {
-  // only required if we get markdown
-  console.log('ref')
-  console.log(ref)
-  // const fullUrl = ref.slice(ref.indexOf("https"), -1).trim().split('\n')[0]
-  console.log(ref)
   const [url, loc] = ref.split("#");
   const [org, repo,_blob, branch, ...pathSeg] = new global.URL(url).pathname
     .split("/")
