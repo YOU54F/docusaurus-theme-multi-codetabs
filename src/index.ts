@@ -8,7 +8,7 @@
 import path from 'path'
 
 export default () => ({
-    name: 'docusaurus-theme-github-codeblock',
+    name: 'docusaurus-theme-github-codetabs',
 
     getThemePath() {
         return path.resolve(__dirname, './theme')

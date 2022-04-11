@@ -36,7 +36,7 @@ const config = {
       }),
     ],
   ],
-  themes: ["@you54f/theme-github-codeblock"], // switch to @saucelabs/theme-github-codeblock when merged https://github.com/saucelabs/docusaurus-theme-github-codeblock/pull/19
+  themes: ["theme-github-codetabs"], // switch to @you54f/theme-github-codetabs when merged https://github.com/you54f/docusaurus-theme-github-codetabs/pull/19
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

@@ -1,5 +1,5 @@
 {
-  "name": "@you54f/theme-github-codeblock",
+  "name": "theme-github-codetabs",
   "version": "0.1.1",
   "description": "A Docusaurus v2 plugin that supports referencing code examples from public GitHub repositories.",
   "main": "build/index.js",
@@ -14,17 +14,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saucelabs/docusaurus-code-references.git"
+    "url": "git+https://github.com/you54f/docusaurus-theme-github-codetabs.git"
   },
   "keywords": [
     "docusarus"
   ],
-  "author": "Christian Bromann <christian@saucelabs.com>",
+  "author": "Yousaf Nabi <yousafn@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saucelabs/docusaurus-code-references/issues"
+    "url": "https://github.com/you54f/docusaurus-theme-github-codetabs/issues"
   },
-  "homepage": "https://github.com/saucelabs/docusaurus-code-references#readme",
+  "homepage": "https://github.com/you54f/docusaurus-theme-github-codetabs#readme",
   "devDependencies": {
     "@types/jest": "^27.0.0",
     "@types/node": "^14.11.8",

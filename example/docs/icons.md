@@ -6,7 +6,7 @@ title: Icons
 import {
   languageIconsWithLabels,
   languageIcons,
-} from "@you54f/theme-github-codeblock/build/theme/IconGenerator/icons";
+} from "theme-github-codetabs/build/theme/IconGenerator/icons";
 
 ## Overview
 
