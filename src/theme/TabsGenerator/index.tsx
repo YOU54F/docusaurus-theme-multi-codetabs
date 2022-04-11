@@ -9,7 +9,7 @@ import type {
 import { generateTabIcon } from "../IconGenerator/iconGenerator";
 import TabItem from "@theme/TabItem";
 import Tabs from "@theme/Tabs";
-import ReferenceCode from "../ReferenceCodeBlock/index.refactored";
+import ReferenceCode from "../ReferenceCodeBlock";
 
 function generateTabItem({
     data,

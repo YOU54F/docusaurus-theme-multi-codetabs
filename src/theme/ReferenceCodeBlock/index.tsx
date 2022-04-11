@@ -1,25 +1,14 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme-init/CodeBlock";
-
-import type {
-    ReferenceCodeBlockProps,
-    GitHubReference,
-    DispatchMessage,
-} from "../types";
-
-const initialFetchResultState = {
-    code: "loading...",
-    error: null,
-    loading: null,
-};
+import type {  GitHubReference, ReferenceCodeBlockProps } from "../types";
 
 const noteStyle: React.CSSProperties = {
-    fontSize: ".9em",
-    fontWeight: 600,
-    color: "#0E75DD",
-    textAlign: "center",
-    paddingBottom: "13px",
-    textDecoration: "underline",
+  fontSize: ".9em",
+  fontWeight: 600,
+  color: "#0E75DD",
+  textAlign: "center",
+  paddingBottom: "13px",
+  textDecoration: "underline",
 };
 
 /**
@@ -27,146 +16,94 @@ const noteStyle: React.CSSProperties = {
  * @param {string} ref url to github file
  */
 export function parseReference(ref: string): GitHubReference {
-    const fullUrl = ref.slice(ref.indexOf("https"), -1).trim().split('\n')[0]
-    const [url, loc] = fullUrl.split("#");
+  // only required if we get markdown
+  console.log('ref')
+  console.log(ref)
+  // const fullUrl = ref.slice(ref.indexOf("https"), -1).trim().split('\n')[0]
+  console.log(ref)
+  const [url, loc] = ref.split("#");
+  const [org, repo,_blob, branch, ...pathSeg] = new global.URL(url).pathname
+    .split("/")
+    .slice(1);
 
-    /**
-     * webpack causes failures when it tries to render this page
-     */
-    const global = globalThis || {};
-    if (!global.URL) {
-        // @ts-ignore
-        global.URL = URL;
-    }
-
-    const [org, repo, blob, branch, ...pathSeg] = new global.URL(url).pathname
-        .split("/")
-        .slice(1);
-    const [fromLine, toLine] = loc
-        ? loc.split("-").map((lineNr) => parseInt(lineNr.slice(1), 10) - 1)
-        : [0, Infinity];
-
-    return {
-        url: `https://raw.githubusercontent.com/${org}/${repo}/${branch}/${pathSeg.join(
-            "/"
-        )}`,
-        fromLine,
-        toLine,
-        title: pathSeg.join("/"),
-    };
-}
-
-async function fetchCode(
-    { url, fromLine, toLine }: GitHubReference,
-    fetchResultStateDispatcher: React.Dispatch<DispatchMessage>,
-    children: string
-) {
-    let res: Response;
-
-    try {
-        res = await fetch(url);
-    } catch (err) {
-        try {
-            // fallback to user provided code snippet if available
-            return fetchResultStateDispatcher({
-                type: "loaded",
-                value: children.substring(children.indexOf("\n") + 1),
-            });
-        } catch (error) {
-            return fetchResultStateDispatcher({ type: "error", value: error as Error });
-        }
-    }
-
-    if (res.status !== 200) {
-        const error = await res.text();
-        try {
-            // fallback to user provided code snippet if available
-            return fetchResultStateDispatcher({
-                type: "loaded",
-                value: children.substring(children.indexOf("\n") + 1),
-            });
-        } catch (error) {
-            return fetchResultStateDispatcher({ type: "error", value: error as Error });
-        }
-    }
-
-    const body = (await res.text())
-        .split("\n")
-        .slice(fromLine, (toLine || fromLine) + 1);
-    const preceedingSpace = body.reduce((prev: number, line: string) => {
-        if (line.length === 0) {
-            return prev;
-        }
-
-        const spaces = line.match(/^\s+/);
-        if (spaces) {
-            return Math.min(prev, spaces[0].length);
-        }
-
-        return 0;
-    }, Infinity);
-
-    return fetchResultStateDispatcher({
-        type: "loaded",
-        value: body.map((line) => line.slice(preceedingSpace)).join("\n"),
-    });
-}
-
-export function codeReducer(prevState: any, { type, value }: DispatchMessage) {
-    switch (type) {
-        case "reset": {
-            return initialFetchResultState;
-        }
-        case "loading": {
-            return { ...prevState, loading: true };
-        }
-        case "loaded": {
-            return { ...prevState, code: value, loading: false };
-        }
-        case "error": {
-            return { ...prevState, error: value, loading: false };
-        }
-        default:
-            return prevState;
-    }
+  const [fromLine, toLine] = loc
+    ? loc.split("-").map((lineNr) => parseInt(lineNr.slice(1), 10) - 1)
+    : [0, Infinity];
+  return {
+    url: `https://raw.githubusercontent.com/${org}/${repo}/${branch}/${pathSeg.join(
+      "/"
+    )}`,
+    fromLine,
+    toLine,
+    title: pathSeg.join("/"),
+  };
 }
 
 function ReferenceCode(props: ReferenceCodeBlockProps) {
-    const [fetchResultState, fetchResultStateDispatcher] = useReducer(
-        codeReducer,
-        initialFetchResultState
-    );
+  const [data, setData] = useState<string>("...loading");
 
-    const codeSnippetDetails = parseReference(props.children);
+  const codeSnippetDetails = parseReference(props.url??props.children);
 
-    if (fetchResultState.loading !== false) {
-        fetchCode(
-            codeSnippetDetails,
-            fetchResultStateDispatcher,
-            props.children
-        );
+  useEffect(() => {
+    const { url, fromLine, toLine } = codeSnippetDetails;
+
+    try {
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            setData(props.children.substring(props.children.indexOf("\n") + 1));
+            throw new Error("failed");
+          }
+          return response.text();
+        })
+        .then((responseText) =>
+          responseText.split("\n").slice(fromLine, (toLine || fromLine) + 1)
+        )
+        .then((body) =>
+          body
+            .map((line) =>
+              line.slice(
+                body.reduce((prev: number, line: string) => {
+                  if (line.length === 0) {
+                    return prev;
+                  }
+
+                  const spaces = line.match(/^\s+/);
+                  if (spaces) {
+                    return Math.min(prev, spaces[0].length);
+                  }
+
+                  return 0;
+                }, Infinity)
+              )
+            )
+            .join("\n")
+        )
+        .then((data) => setData(data));
+    } catch (error) {
+      console.log(error);
     }
+  }, []);
 
-    const titleMatch = props.metastring?.match(/title="(?<title>.*)"/);
+  const customProps = {
+    ...props,
+    title: props.title ? props.title : decodeURIComponent(codeSnippetDetails.title),
+    children:
+      data && data !== "failed"
+        ? data
+        : props.children ?? "Failed to fetch content, and no fallback content found",
+  };
 
-    const customProps = {
-        ...props,
-        metastring: titleMatch?.groups?.title
-            ? ` title="${titleMatch?.groups?.title}"`
-            : ` title="${codeSnippetDetails ? codeSnippetDetails.title : ""}"`,
-        children: initialFetchResultState.code,
-    };
-
-    return (
-        <div>
-            <CodeBlock {...customProps}>{fetchResultState.code}</CodeBlock>
-            <div style={noteStyle}>
-                <a href={props.children} target="_blank">
-                    See full example on GitHub
-                </a>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <CodeBlock {...customProps}>{customProps.children}</CodeBlock>
+      <div style={noteStyle}>
+        <a href={props.children} target="_blank">
+          See full example on GitHub
+        </a>
+      </div>
+    </div>
+  );
 }
 
 export default ReferenceCode;

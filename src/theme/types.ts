@@ -9,10 +9,11 @@ export interface GitHubReference {
     title: string
 }
 
+// export interface ReferenceCodeBlockProps extends CodeBlockProps {
+//   reference: string
+// }
 export interface ReferenceCodeBlockProps extends CodeBlockProps {
-  reference: string
-}
-export interface ReferenceRefactoredCodeBlockProps extends CodeBlockProps {
+  reference?: string;
   url: string;
   language: string | undefined
   title: string | undefined

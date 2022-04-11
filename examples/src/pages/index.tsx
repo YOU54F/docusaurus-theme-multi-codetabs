@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+// import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import TabsGenerator from "@you54f/theme-github-codeblock/build/theme/TabsGenerator"
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Check out the docs
           </Link>
         </div>
       </div>
@@ -32,10 +32,11 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
+      {/* <main>
         <HomepageFeatures />
-      </main>
+      </main> */}
       <TabsGenerator autoGenContent={true} group='languages'>{}</TabsGenerator>
+      <TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>
     </Layout>
   );
 }
