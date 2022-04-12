@@ -68,11 +68,12 @@ function generateTabItem({
                     }
                     title={data[key].contentTitle}
                     url={data[key].contentUrl || "no url"}
-                    // reference={data[key].contentUrl || "no url"}
+                    reference={data[key].contentUrl || "no url"}
                 >
-                    {content
+                    {`\`\`\`${data[key].contentUrl}\`\`\``}
+                    {/* {content
                         ? (content as unknown as string)
-                        : ((<></>) as unknown as string)}
+                        : ((<></>) as unknown as string)} */}
                 </ReferenceCode>
             );
         }

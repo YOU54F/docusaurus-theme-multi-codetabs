@@ -23,9 +23,16 @@ const config = {
       ({
         docs: {
           remarkPlugins: [
-            [require('docusaurus-remark-plugin-codetabs'), {
-               // options             
-            }]],          
+            [require('docusaurus-remark-plugin-codetabs-snippets'), {
+            // options             
+          }],
+          [require('docusaurus-remark-plugin-codetabs'), {
+            // options             
+          }],
+          [require('remark-plugin-code-snippets'), {
+            // options             
+          }],
+            ],
             sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/you54f/docusaurus-tab-generator',

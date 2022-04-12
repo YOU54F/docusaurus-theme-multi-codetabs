@@ -38,7 +38,6 @@ export const iconMap = new Map<string,any>([
 
 
 export const IconGenerator = (props:PropsWithoutRef<{ language: string; }>) =>{
-  console.log(props.language)
   const Icon = iconMap.get(props.language)
   if (Icon){
     return <Icon height={24} width={24}/>

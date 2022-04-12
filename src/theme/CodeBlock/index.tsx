@@ -14,7 +14,7 @@ import type { ReferenceCodeBlockProps } from "../types";
 const componentWrapper = (Component: typeof CodeBlock) => {
   const WrappedComponent = (props: ReferenceCodeBlockProps) => {
     
-    const [fetchedCodeContent, setFetchedCodeContent] = useState<JSX.Element>(<>...loading</>);
+    const [fetchedCodeContent, setFetchedCodeContent] = useState<JSX.Element|null>(null);
 
     useEffect(() => {
         if (props.reference) {
@@ -22,7 +22,7 @@ const componentWrapper = (Component: typeof CodeBlock) => {
         }
     }, []);
 
-    return fetchedCodeContent ??  (
+    return fetchedCodeContent ? fetchedCodeContent: (
         <CodeBlock {...props} />
     );
 };

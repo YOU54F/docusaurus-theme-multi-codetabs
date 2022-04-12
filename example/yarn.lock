@@ -3320,6 +3320,16 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
+docusaurus-remark-plugin-codetabs-snippets@^1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-remark-plugin-codetabs-snippets/-/docusaurus-remark-plugin-codetabs-snippets-1.0.0-alpha.1.tgz#6ea3cd55e97e93218a52ce1f23bc933f2202b81a"
+  integrity sha512-9dDYV26DDrF6SA31S6r5z5ruPRyX5ovTkiMMoDG4f4hHVEwO2YbzytBjBKPtMoONg4M1UHVeoyu/NfhSXGuQ5g==
+
+docusaurus-remark-plugin-codetabs@^1.0.0-alpha.3:
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/docusaurus-remark-plugin-codetabs/-/docusaurus-remark-plugin-codetabs-1.0.0-alpha.3.tgz#304f77204ae0c8c7758f587c4df19c09346c35a3"
+  integrity sha512-Vqy6Oe20Wpzl7fYz6KRjhgaVFOQiKa9nHlzFP/rEq4WKU6+Fq3y6FemNIR++HBl2cHvUjYn4l/BnR1XMK2wkEQ==
+
 dom-converter@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
@@ -6299,6 +6309,11 @@ remark-parse@8.0.3:
     unist-util-remove-position "^2.0.0"
     vfile-location "^3.0.0"
     xtend "^4.0.1"
+
+remark-plugin-code-snippets@^1.0.0-alpha.4:
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/remark-plugin-code-snippets/-/remark-plugin-code-snippets-1.0.0-alpha.4.tgz#5d68c633eb274d52a80984fbd0e2f32d5d02884a"
+  integrity sha512-ezq/fnTh72rL4n8Z9Tb3eYcBg8QPhTCicn1Wbn7cp1a8wNg6DNTIhad+UNTD0BJiwz9Ao+vabv8O/x/ypRoQOQ==
 
 remark-squeeze-paragraphs@4.0.0:
   version "4.0.0"
