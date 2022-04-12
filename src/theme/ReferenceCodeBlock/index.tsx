@@ -134,8 +134,8 @@ function ReferenceCode(props: ReferenceCodeBlockProps) {
     const customProps = {
         ...props,
         metastring: titleMatch?.groups?.title
-            ? ` title="${titleMatch?.groups?.title}"` : props.title
-            ? ` title="${props.title}"`
+            ? ` title="${decodeURIComponent(titleMatch?.groups?.title)}"` : props.title
+            ? ` title="${decodeURIComponent(props.title)}"`
             : ` title="${decodeURIComponent(codeSnippetDetails.title)}"`,
         children: initialFetchResultState.code,
     };
