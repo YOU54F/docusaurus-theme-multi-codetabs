@@ -32,7 +32,7 @@ function generateTabItem({
               ...retrievedData,
               iconTitle: data[key].iconTitle
                   ? data[key].iconTitle
-                  : (data[key].iconTitle = Object.keys(data[key])[0]),
+                  : (data[key].iconTitle = key),
                 key
           })
         : generateTabIcon({
@@ -64,7 +64,7 @@ function generateTabItem({
                     language={
                         data[key].language
                             ? data[key].language
-                            : Object.keys(data)[0]
+                            : key
                     }
                     title={data[key].contentTitle}
                     url={data[key].contentUrl || "no url"}
