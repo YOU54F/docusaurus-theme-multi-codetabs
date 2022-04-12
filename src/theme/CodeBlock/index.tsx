@@ -5,28 +5,30 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useEffect, useState } from "react";
-import ReferenceCodeBlock from "../ReferenceCodeBlock";
-import CodeBlock from "@theme-init/CodeBlock";
+import React, { useEffect, useState }  from 'react'
+import ReferenceCodeBlock from '../ReferenceCodeBlock'
+import CodeBlock from '@theme-init/CodeBlock'
 
 import type { ReferenceCodeBlockProps } from "../types";
 
 const componentWrapper = (Component: typeof CodeBlock) => {
-    const WrappedComponent = (props: ReferenceCodeBlockProps) => {
-        const [fetchedCodeContent, setFetchedCodeContent] = useState<JSX.Element>();
+  const WrappedComponent = (props: ReferenceCodeBlockProps) => {
+    
+    const [fetchedCodeContent, setFetchedCodeContent] = useState<JSX.Element>(<>...loading</>);
 
-        useEffect(() => {
-            if (props.reference) {
-                setFetchedCodeContent(<ReferenceCodeBlock {...props} />);
-            }
-        }, []);
+    useEffect(() => {
+        if (props.reference) {
+            setFetchedCodeContent(<ReferenceCodeBlock {...props} />);
+        }
+    }, []);
 
-        return fetchedCodeContent ??  (
-            <CodeBlock {...props} />
-        );
-    };
-
-    return WrappedComponent;
+    return fetchedCodeContent ??  (
+        <CodeBlock {...props} />
+    );
 };
 
-module.exports = componentWrapper(CodeBlock);
+return WrappedComponent;
+};
+
+
+module.exports = componentWrapper(CodeBlock)

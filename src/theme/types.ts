@@ -19,7 +19,7 @@ export interface ReferenceCodeBlockProps extends CodeBlockProps {
   title: string | undefined
 }
 
-export type DispatchTypes = 'reset' | 'loading' | 'loaded' | 'error'
+export type DispatchTypes = 'reset' | 'loading' | 'loaded' | 'error' | 'fallback'
 
 export interface DispatchMessage {
     type: DispatchTypes
