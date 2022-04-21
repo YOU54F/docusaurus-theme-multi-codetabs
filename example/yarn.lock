@@ -3330,10 +3330,10 @@ docusaurus-remark-plugin-codetabs@^1.0.0-alpha.3:
   resolved "https://registry.yarnpkg.com/docusaurus-remark-plugin-codetabs/-/docusaurus-remark-plugin-codetabs-1.0.0-alpha.3.tgz#304f77204ae0c8c7758f587c4df19c09346c35a3"
   integrity sha512-Vqy6Oe20Wpzl7fYz6KRjhgaVFOQiKa9nHlzFP/rEq4WKU6+Fq3y6FemNIR++HBl2cHvUjYn4l/BnR1XMK2wkEQ==
 
-docusaurus-theme-multi-codetabs@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/docusaurus-theme-multi-codetabs/-/docusaurus-theme-multi-codetabs-0.0.1.tgz#db59a0844fb312c525e62d2f8f9741af2e610bc4"
-  integrity sha512-Kmr8zkEb/Q6MWvj8IvKZ0Vsi/UxwzdfpoDh8Pby0r7qfCt+/m1XO/yvGou4yn2lsovoPAmJh1xUWCSGYY35xAg==
+docusaurus-theme-multi-codetabs@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/docusaurus-theme-multi-codetabs/-/docusaurus-theme-multi-codetabs-0.0.2.tgz#763cdfe65dda9624461fc251160f67e210fe22a8"
+  integrity sha512-PLczsZhvvR1UedqJGq00MPm2XLn+cgzVNUFcTQbfh4yY9KMSiWjjCaAz+QrO9rJJQibonFSiVjrVDeXRoWfc0Q==
 
 dom-converter@^0.2.0:
   version "0.2.0"
