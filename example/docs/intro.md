@@ -7,13 +7,13 @@ sidebar_position: 1
 First, add the theme plugin to your dependencies:
 
 ```sh
-npm install theme-github-codetabs
+npm install docusaurus-theme-multi-codetabs
 ```
 
 or yarn
 
 ```sh
-yarn add theme-github-codetabs
+yarn add docusaurus-theme-multi-codetabs
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ Add the theme plugin to your list of themes in the `docusaurus.config.js`:
 ```js
     // ...
     themes: [
-        'theme-github-codetabs'
+        'docusaurus-theme-multi-codetabs'
     ],
     // ...
 ```
@@ -34,21 +34,21 @@ Add the theme plugin to your list of themes in the `docusaurus.config.js`:
 ### code
 
   ```jsx
-  import TabsGenerator from "theme-github-codetabs/build/theme/TabsGenerator"
+  import TabsGenerator from "docusaurus-theme-multi-codetabs/build/theme/TabsGenerator"
 
   <TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>
   ```   
 
 ### demo
 
-import TabsGenerator from "theme-github-codetabs/build/theme/TabsGenerator"
+import TabsGenerator from "docusaurus-theme-multi-codetabs/build/theme/TabsGenerator"
 
 <TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>
 
 ___
 
   ```jsx
-  import TabsGenerator from "theme-github-codetabs/build/theme/TabsGenerator"
+  import TabsGenerator from "docusaurus-theme-multi-codetabs/build/theme/TabsGenerator"
 
   <TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>
   ```   

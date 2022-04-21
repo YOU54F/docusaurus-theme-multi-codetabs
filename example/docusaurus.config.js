@@ -43,7 +43,7 @@ const config = {
       }),
     ],
   ],
-  themes: ["theme-github-codetabs"], // switch to @you54f/theme-github-codetabs when merged https://github.com/you54f/docusaurus-theme-github-codetabs/pull/19
+  themes: ["docusaurus-theme-multi-codetabs"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

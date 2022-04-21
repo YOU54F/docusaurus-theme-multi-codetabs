@@ -1,6 +1,6 @@
-# Contributing to `docusaurus-theme-github-codetabs`
+# Contributing to `docusaurus-theme-multi-codetabs`
 
-**Thank you for your interest in `docusaurus-theme-github-codetabs`. Your contributions are highly welcome.**
+**Thank you for your interest in `docusaurus-theme-multi-codetabs`. Your contributions are highly welcome.**
 
 There are multiple ways of getting involved:
 

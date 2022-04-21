@@ -6,7 +6,7 @@ title: Icons
 import {
   languageIconsWithLabels,
   languageIcons,
-} from "theme-github-codetabs/build/theme/IconGenerator/icons";
+} from "docusaurus-theme-multi-codetabs/build/theme/IconGenerator/icons";
 
 ## Overview
 

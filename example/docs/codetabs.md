@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Code Tabs - Configuring
 ---
 
-import TabsGenerator from "theme-github-codetabs/build/theme/TabsGenerator"
+import TabsGenerator from "docusaurus-theme-multi-codetabs/build/theme/TabsGenerator"
 
 ## Overview
 
@@ -18,7 +18,7 @@ They will be grouped by the `groupId` so all tabs, with the same name will chang
 Import it in your readme file
 
 ```typescript
-import TabsGenerator from "theme-github-codetabs/build/theme/TabsGenerator";
+import TabsGenerator from "docusaurus-theme-multi-codetabs/build/theme/TabsGenerator";
 ```
 
 Add it into your markdown or mdx file.

@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 // import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import TabsGenerator from "theme-github-codetabs/build/theme/TabsGenerator"
+import TabsGenerator from "docusaurus-theme-multi-codetabs/build/theme/TabsGenerator"
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
