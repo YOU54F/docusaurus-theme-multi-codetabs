@@ -1,5 +1,5 @@
 {
-  "name": "theme-github-codetabs",
+  "name": "theme-multi-codetabs",
   "version": "0.2.3",
   "description": "A Docusaurus v2 plugin that supports referencing code egxamples from public GitHub repositories.",
   "main": "build/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/you54f/docusaurus-theme-github-codetabs.git"
+    "url": "git+https://github.com/you54f/docusaurus-theme-multi-codetabs.git"
   },
   "keywords": [
     "docusarus"
@@ -22,9 +22,9 @@
   "author": "Yousaf Nabi <yousafn@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/you54f/docusaurus-theme-github-codetabs/issues"
+    "url": "https://github.com/you54f/docusaurus-theme-multi-codetabs/issues"
   },
-  "homepage": "https://github.com/you54f/docusaurus-theme-github-codetabs#readme",
+  "homepage": "https://github.com/you54f/docusaurus-theme-multi-codetabs#readme",
   "devDependencies": {
     "@types/jest": "^27.0.0",
     "@types/node": "^14.11.8",

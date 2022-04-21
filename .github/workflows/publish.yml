@@ -1,41 +1,36 @@
-name: Manual NPM Publish
+name: Publish and release
 
 on:
-  workflow_dispatch:
-    inputs:
-      releaseType:
-        description: 'Release type - major, minor or patch'
-        required: true
-        default: 'patch'
+  repository_dispatch:
+    types:
+      - release-triggered
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone Repository
-        uses: actions/checkout@v2
-      - name: Setup Node version
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: fregante/setup-git-user@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: 12
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: npm ci
+        run: yarn install
       - name: Run tests
         run: npm test
       - name: Build package
         run: npm run build
-      - name: Setup Git
-        run: |
-          git config --global user.name "oss-sauce-bot"
-          git config --global user.email "66365630+oss-sauce-bot@users.noreply.github.com"
       - name: NPM Setup
         run: |
           npm set registry "https://registry.npmjs.org/"
           npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
           npm whoami
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_AUTOMATION_TOKEN}}
       - name: Release
-        run: npm run release -- ${{github.event.inputs.releaseType}}
+        run: npm run release -- ${{github.event.client_payload.release_type}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -22,13 +22,13 @@ https://github.com/saucelabs/docusaurus-theme-github-codeblock/blob/main/src/the
 ### code
 
     ```js reference title="example"
-    https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
+    https://github.com/you54f/docusaurus-theme-multi-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
     ```
 
 ### demo
 
 ```js reference title="example"
-https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
+https://github.com/you54f/docusaurus-theme-multi-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
 ```
 
 ## Display a single code block, with fallback text, if the GitHub url doesn't resolve
@@ -36,14 +36,14 @@ https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main/src/theme/R
 ### code
 
     ```js reference title="example"
-    https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main/
+    https://github.com/you54f/docusaurus-theme-multi-codetabs/blob/main/
     This is some fallback code
     ```
 
 ### demo
 
 ```js reference title="example"
-https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main
+https://github.com/you54f/docusaurus-theme-multi-codetabs/blob/main
 This is some fallback code
 ```
 
@@ -103,7 +103,7 @@ module.exports = {
     let assignTitle: &str = r#"title="main.rs""#;
 
     ```cpp reference title="main.cpp"
-    https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
+    https://github.com/you54f/docusaurus-theme-multi-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
     #include <iostream>
     using namespace std;
     int main() {
@@ -137,7 +137,7 @@ const main = () => {
 let assignTitle: &str = r#"title="main.rs""#;
 
 ```cpp reference title="main.cpp"
-https://github.com/you54f/docusaurus-theme-github-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
+https://github.com/you54f/docusaurus-theme-multi-codetabs/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
 #include <iostream>
 using namespace std;
 int main() {

@@ -1,11 +1,53 @@
-Docusaurus Theme GitHub Codeblock ![Test Changes](https://github.com/you54f/docusaurus-theme-github-codetabs/workflows/Test%20Changes/badge.svg?branch=main)
+Docusaurus Theme GitHub Codeblock ![Test Changes](https://github.com/you54f/theme-multi-codetabs/workflows/Test%20Changes/badge.svg?branch=main)
 =================================
 
-A Docusaurus v2 plugin that supports referencing code examples from public GitHub repositories.
+
+A Docusaurus v2 plugin that allows you to easily create multiple code language tabs on your website, its supports text can be sourced directly from Markdown or referencing code examples from public GitHub repositories.
 
 > Note: this theme plugin requires [Docusaurus v2](https://v2.docusaurus.io/)
 
-Check the details on how to use, and demonstrations
+
+---
+
+
+## Install
+
+First, add the theme plugin to your dependencies:
+
+```sh
+npm install theme-multi-codetabs
+```
+
+or yarn
+
+```sh
+yarn add theme-multi-codetabs
+```
+
+## Usage
+
+Add the theme plugin to your list of themes in the `docusaurus.config.js`:
+
+```js
+    // ...
+    themes: [
+        'theme-multi-codetabs'
+    ],
+    // ...
+```
+
+
+## Display multiple code in tabs, in Markdown via a React Component
+
+### code
+
+  ```jsx
+  import TabsGenerator from "theme-multi-codetabs/build/theme/TabsGenerator"
+
+  <TabsGenerator autoGenContent={false} group='languages'>{}</TabsGenerator>
+  ```   
+
+We also support writing directly in Markdown, thanks to @saucelabs, which inspired this plugin.
 
 
 You can also set some fallback text if the plugin fails to find your codeblock:

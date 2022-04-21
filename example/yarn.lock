@@ -6964,9 +6964,9 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theme-github-codetabs@^0.2.3:
+theme-multi-codetabs@^0.2.3:
   version "0.2.3"
-  resolved "https://registry.yarnpkg.com/theme-github-codetabs/-/theme-github-codetabs-0.2.3.tgz#21eef9306e673ea6e9ea9b008c0e03c6e0ad4ac7"
+  resolved "https://registry.yarnpkg.com/theme-multi-codetabs/-/theme-multi-codetabs-0.2.3.tgz#21eef9306e673ea6e9ea9b008c0e03c6e0ad4ac7"
   integrity sha512-FEt8xOA9NAd486/MF+WCG/uIFXmveVwbJH6qLa7Ve5WA5E9W5LpDTKI66W+MS6r8voM/MAzJUp0PukUqMd9ndg==
 
 thunky@^1.0.2:
